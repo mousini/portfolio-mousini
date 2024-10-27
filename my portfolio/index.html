@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mousini's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<style>*{
+    margin:0;
+    padding: 0;
+    box-sizing:border-box;
+    text-decoration: none;
+    border:none;
+    outline:none;
+    scroll-behavior: smooth;
+font-family: "Poppins",sans-serif;
+}
+:root{
+    --bg-color:black;
+    --second-bg-color:black;
+    --text-color:white;
+    --main-color:rgb(209, 9, 99);
+    --card-bg-color: #333; 
+    --card-border-color: #444; 
+    --card-hover-scale: 1.05; 
+}
+html{
+    font-size:60%;
+    overflow-x:hidden;
+
+}
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:4rem 12% 4rem;
+    background: rgba(0, 0 , 0 , 0.3);
+    backdrop-filter:blur(10px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:5;
+
+}
+.logo{
+    font-size: 3rem;
+    color:white;
+    font-weight:800;
+    cursor:pointer;
+    transition:0.3s ease;
+   
+}
+.logo:hover{
+    transform: scale(1.1); 
+}
+.logo span{
+    text-shadow: 0 0 25px var(--main-color);
+    color: var(--main-color);
+}
+.navbar a{
+   
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight:500;
+    transition:0.3s ease;
+    border-bottom: 3px solid transparent;
+
+font-size:2rem;
+}
+.navbar a:hover,
+.navbar a.active{
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}#menu-icon{
+    font-size: 3.6rem;
+    color: var(--main-color);
+    display:none;
+}
+section{
+    min-height:100vh;
+    padding: 10rem 12% 10rem;
+}
+.home{
+    display:flex;
+    align-items: baseline;
+    
+    justify-content:center;
+    gap:15rem;
+}
+.home-content{
+    display:flex;
+    flex-direction: column;
+    align-items: baseline;
+    text-align:left;
+    justify-content:center;
+    margin-top: 3rem;
+}
+span{
+    color: var(--main-color);
+}
+.logo span{
+    color:var(--main-color);
+}
+
+.home-content h3{
+    margin-bottom:2rem;
+    margin-top:1rem;
+    font-size:3.5rem;
+
+}
+.home-content h1{
+    font-size:7rem;
+    font-weight:700;
+    margin-top:1.5rem;
+    line-height:1;
+}
+.home-image{
+    border-radius:50%;
+}
+.home-img img{
+    position:relative;
+top:11rem;
+    border-radius:50%;
+   border-radius:50%;
+   box-shadow: 0 0 25px rgb(128, 4, 49);
+   cursor:pointer;
+   transition: 0.4s ease-in-out;
+   animation: float 6s ease-in-out infinite;
+}
+.home-img img:hover{
+    box-shadow: 0 0  25px rgb(128, 4, 49),
+    0 0 50px rgb(128, 4, 49),
+    0 0 100px rgb(128, 4, 49);
+}
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-19px); 
+    }
+}
+.home-content p{
+    font-size:1.5rem;
+    font-weight:500;
+    line-height:1.8s;
+    max-width:1000px;
+
+}
+.social-icons a{
+   display:inline-flex;
+justify-content:center;
+align-items:center;
+width:4.5rem;
+height:4.5rem;
+background: transparent;
+border:2px solid var(--main-color);
+font-size:2.5rem;
+border-radius: 50%;
+color:var(--main-color);
+margin: 3rem 1.5rem 3rem 0;
+transition:0.3s ease-in-out;
+box-shadow: 0 0 25px var(--main-color);
+}
+.social-icons a:hover{
+    color:var(--text-color);
+    transform:scale(1.3s)translateY(-5px);
+    box-shadow: 0 0  25px var(--main-color),
+    0 0 50px var(--main-color),
+    0 0 100px var(--main-color);
+
+}
+
+.text-animation {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.text-animation span {
+    position: relative;
+}
+
+.text-animation span::before {
+    content: "Web Developer";
+    color: rgb(192, 23, 110);
+    animation: words 20s infinite;
+}
+
+.text-animation span::after {
+    content: "";
+    background-color: var(--bg-color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--main-color);
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+    to {
+        border-left: 2px solid var(--main-color);
+    }
+}
+
+@keyframes words {
+    0%, 20% {
+        content: "Web Developer";
+    }
+    21%, 40% {
+        content: "Learner";
+    }
+    41%, 60% {
+        content: "Student";
+    }
+    61%, 80% {
+        content: "Human";
+    }
+    
+    
+    81%, 100% {
+        content: "just a girl!";
+    }
+}
+
+@keyframes typing {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
+        width: 0;
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
+        width: calc(100% + 8px);
+    }
+}
+.heading{
+    font-size:8rem;
+    text-align: center;
+    margin: 5rem 0;
+}
+.education{
+    padding:100px 15px;
+    background: var(--second-bg-color);
+}
+.timeline-items{
+    max-width: 1200px;
+    margin:auto;
+    display:flex;
+    flex-wrap:wrap;
+    position:relative;
+
+}
+.timeline-items::before{
+    content:"";
+    position:absolute;
+    width:5px;
+    height:100%;
+    background-color:var(--main-color);
+    left:calc(50% - 1px);
+}
+.timeline-items {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.timeline-items::before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: black;
+    left: calc(50% - 2.5px); /* Center the line */
+}
+
+.timeline-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    margin: auto;
+    padding: 50px 0; /* Adjust as needed */
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-dot {
+    height: 21px;
+    width: 21px;
+    background-color: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
+    border-radius: 50%;
+    position: relative; 
+    margin-right: 20px; 
+}
+
+.timeline-date {
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    margin-right: 20px;
+    text-shadow: 0 0 25px var(--main-color);
+    color: var(--main-color);
+}
+
+
+
+.timeline-content {
+    background-color: var(--bg-color);
+    border: 3px solid var(--main-color);
+    padding: 30px 50px;
+    border-radius: 4rem;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+
+}
+.timeline-content:hover {
+  
+    transform: perspective(500px) rotateX(5deg) rotateY(5deg) translateY(-15px);
+    box-shadow: 0 0 35px var(--main-color), 0 0 60px var(--main-color), 0 0 80px var(--main-color);
+}
+.techstack {
+    padding: 100px 15px;
+    background-color: var(--bg-color);
+}
+
+.techstack .heading {
+    font-size: 8rem; 
+    text-align: center;
+    margin: 5rem 0;
+    color: var(--text-color);
+}
+
+.techstack-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.tech-item {
+    background: var(--bg-color);
+    border: 1px solid var(--main-color);
+    padding: 30px 50px;
+    border-radius: 4rem;
+    box-shadow: 0 4px 8px  var(--main-color);
+    
+    text-align: center;
+    max-width: 200px;
+    flex: 1 1 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: var(--text-color);
+    cursor: pointer;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.tech-item:hover {
+    background-color: var(--bg-color);
+    border: 3px solid var(--main-color);
+    padding: 30px 50px;
+    border-radius: 4rem;
+    box-shadow: 0 0 25px var(--main-color);
+    transform: perspective(500px) rotateX(5deg) rotateY(5deg) translateY(-15px);
+    box-shadow: 0 0 35px var(--main-color), 0 0 60px var(--main-color), 0 0 80px var(--main-color);
+}
+
+.tech-item i {
+    font-size: 3rem;
+    color: var(--main-color);
+    margin-bottom: 10px;
+}
+
+.tech-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--main-color);
+}
+
+.tech-item p {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.projects {
+    padding: 100px 15px;
+    background-color: var(--bg-color);
+}
+
+.projects .heading {
+    font-size: 8rem;
+    text-align: center;
+    margin: 5rem 0;
+    color: var(--text-color);
+}
+
+.projects-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.project-item {
+    background: var(--bg-color);
+    border: 1px solid var(--bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--main-color);
+    padding: 20px;
+    max-width: 300px;
+    flex: 1 1 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: var(--text-color);
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.project-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--main-color);
+}
+
+.project-item p {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.project-item .btn {
+    background-color: var(--main-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.project-item .btn:hover {
+    background-color: #d65a8d;
+}
+
+.project-item:hover {
+    background-color: var(--bg-color);
+    border: 3px solid var(--main-color);
+    padding: 30px;
+    border-radius: 4rem;
+    box-shadow: 0 0 25px var(--main-color);
+    transform: perspective(500px) rotateX(5deg) rotateY(5deg) translateY(-15px);
+    box-shadow: 0 0 35px var(--main-color), 0 0 60px var(--main-color), 0 0 80px var(--main-color);
+}
+
+
+
+
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 5px 10px;
+    background-color: transparent; /* Completely transparent */
+    color: #fff;
+    font-size: 14px;
+    backdrop-filter: blur(10px);
+    z-index: 1000; /* Keeps the footer above other elements */
+}
+
+footer p {
+    margin: 3px 0;
+    color: #fff; /* White text */
+    text-shadow: 0px 0px 5px rgb(209, 9, 99), 0px 0px 10px rgb(209, 9, 99);; /* Pink glow */
+
+}
+
+.gmail-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin: 0 3px;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.gmail-icon:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 5px rgb(209, 9, 99)) drop-shadow(0 0 10px rgb(209, 9, 99)); /* Pink glow on hover */
+}
+
+
+
+
+
+</style>
+<body>
+    <header class="header">
+        <a href="#home" class="logo">Mousini<span> Sarkar</span></a>
+
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="home" class="active"></a>
+            <a href="#education">Education</a>
+            <a href="#techstack">Techstack</a>
+            <a href="#projects">Projects
+            </a>
+           
+            
+        </nav>
+    </header>
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1> Hi! I'm <span>Mousini</span></h1>
+        <h3 class="text-animation">I'm a <span></span></h3>
+        <p>I'm a passionate Computer Science Engineering student with a keen interest in web development. 
+I'am particularly interested in projects that integrate web development with the medical field and which will be beneficial for society.I'm also a Blockchain Enthusiast and currently gaining the knowledge of MERN Stack, I'm on a path to becoming a well-rounded developer with a focus on innovation and user experience.Wish me luck!!
+            
+            </p>
+       
+
+       
+            <div class="social-icons">
+                <a href="https://github.com/mousini" target="_blank" rel="noopener noreferrer">
+                    <i class='bx bxl-github'></i>
+                </a>
+                <a href="https://www.linkedin.com/in/mousini-sarkar-4a7252303?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
+                    <i class='bx bxl-linkedin'></i>
+                </a>
+            </div>
+        </div>
+
+<div class="btn-group">
+   
+</div>
+
+        </div>
+<div class="home-img">
+    <img src="WhatsApp Image 2024-08-05 at 02.47.21_a2c63a41.jpg" >
+</div>
+
+
+
+
+    </section>
+
+    <section class="education" id="education">
+        <h2 class="heading">Education</h2>
+        
+        <div class="timeline-items">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2009-2021</div>
+                <div class="timeline-content">
+                    <h3>ICSE</h3>
+                    <p>Mary Immaculate School</p>
+                </div>
+            </div>
+    
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2021-2023</div>
+                <div class="timeline-content">
+                    <h3>Higher Secondary</h3>
+                    <p>Saidabad Manindra Chandra Vidyapith</p>
+                </div>
+            </div>
+    
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2023-2027</div>
+                <div class="timeline-content">
+                    <h3>University/College</h3>
+                    <p>JIS College Of Engineering (BTech in Computer Science and Engineering)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="techstack" id="techstack">
+        <h2 class="heading">Techstack</h2>
+        <div class="techstack-content">
+            <div class="tech-item">
+                <i class='bx bxl-html5'></i>
+                <h3>HTML5</h3>
+                <p>Expert in creating structured web pages with HTML5.</p>
+            </div>
+            <div class="tech-item">
+                <i class='bx bxl-css3'></i>
+                <h3>CSS3</h3>
+                <p>Skilled in designing responsive and visually appealing websites using CSS3.</p>
+            </div>
+            <div class="tech-item">
+                <i class='bx bxl-javascript'></i>
+                <h3>JavaScript</h3>
+                <p>Proficient in adding interactivity and dynamic content with JavaScript.</p>
+            </div>
+            <div class="tech-item">
+                <i class='bx bxl-nodejs'></i>
+                <h3>Node.js</h3>
+                <p>Knowledgeable in server-side development with Node.js.</p>
+            </div>
+            <div class="tech-item">
+                <i class='bx bxl-mongodb'></i>
+                <h3>MongoDB</h3>
+                <p>Familiar with database management and queries using MongoDB.</p>
+            </div>
+            <!-- New Tech Item for Solidity -->
+            <div class="tech-item">
+                <i class='bx bxl-file'></i> <!-- Replace with an appropriate icon if available -->
+                <h3>Solidity</h3>
+                <p>Smart contracts for blockchain applications with Solidity.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="projects" id="projects">
+        <h2 class="heading">Projects</h2>
+        <div class="projects-content">
+            <div class="project-item">
+                <img src="WhatsApp Image 2024-08-05 at 18.23.18_65b3a77a.jpg" alt="Project 1">
+                <h3>An Amazone Clone (My very First Project)</h3>
+                <p>HTML, CSS</p>
+                <a href="https://amazon-clone-by-mousini.netlify.app/" class="btn" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
+            <div class="project-item">
+                <img src="WhatsApp Image 2024-08-05 at 17.59.00_fdfa8c34.jpg" alt="Project 1">
+                <h3>TEXT TO VOICE CONVERTER</h3>
+                <p>HTML, CSS and Javascript</p>
+                <a href="https://text-to-speech-converter-by-mousini.netlify.app/" class="btn" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
+            <div class="project-item">
+                <img src="WhatsApp Image 2024-08-05 at 18.02.29_afa4cfaa.jpg" alt="Project 2">
+                <h3>a simple notes website</h3>
+                <p>HTML, CSS and Javascript</p>
+                <a href="https://notesssss.netlify.app/" class="btn" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
+            <div class="project-item">
+                <img src="WhatsApp Image 2024-08-05 at 18.06.36_0c53b85b.jpg" alt="Project 3">
+                <h3>A simple tic tac toe game</h3>
+                <p>HTML,CSS and Javascript</p>
+                <a href="https://tic-tac-toeeeeeeeeeeeeeeeeeee.netlify.app/" class="btn" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
+            <div class="project-item">
+                <img src="WhatsApp Image 2024-08-05 at 18.10.51_6c79f185.jpg" alt="Project 3">
+                <h3>A QR Code generator</h3>
+                <p>HTML, CSS and Javascript</p>
+                <a href="https://qr-code-generator-ms.netlify.app/" class="btn" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
+            <div class="project-item">
+                <img src="WhatsApp Image 2024-08-05 at 18.14.30_82530662.jpg" alt="Project 3">
+                <h3>Digital Clock</h3>
+                <p>HTML, CSS and Javascript</p>
+                <a href="https://digitalclock-mousini.netlify.app/" class="btn" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
+            <div class="project-item">
+                <img src="WhatsApp Image 2024-08-05 at 18.15.27_1c1710d4.jpg" alt="Project 3">
+                <h3>An image gallery which I made during my internship at CodeAlpha as a frontend developer</h3>
+                <p>HTML, CSS and Javascript</p>
+                <a href="https://codealpha-imagegallery-task-ms.netlify.app/" class="btn" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
+            <div class="project-item">
+                <img src="WhatsApp Image 2024-08-05 at 18.19.22_1cbc55c6.jpg" alt="Project 1">
+                <h3>Music player which I made during my internship at CodeAlpha as a frontend developer</h3>
+                <p>HTML, CSS</p>
+                <a href="https://codealpha-internship-musicplayer-ms.netlify.app/" class="btn" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
+            <div class="project-item">
+                <img src="WhatsApp Image 2024-08-05 at 18.21.54_4ee444ef.jpg" alt="Project 1">
+                <h3>A calculator which I made during my internship at CodeAlpha as a frontend developer</h3>
+                <p>HTML, CSS and Javascript</p>
+                <a href="https://codealpha-task-calculator-mousini.netlify.app/" class="btn" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
+            <div class="project-item">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAMAAABC4vDmAAAAYFBMVEUAAAD////y8vLm5ubMzMyzs7OZmZmAgIA0NDRmZmYYGBgqKipNTU27u7sfHx/f398vLy/T09NISEjs7Ow6OjoQEBD5+fl2dnZvb2+GhoaQkJBSUlKoqKhaWlpAQEDCwsLiKRCtAAADzUlEQVR4nO2b63KrIBCAieINBcSI98T3f8vDes/05HRMqzhn9vuVsWb6lV2XBSkhCIIgCIIgCIIgCIIgyIXRNae80rY1XmicG3CPbItsaG4TRWVbZSG6LRTCqonIs3TKIbpK3XyLSqyRTuHQMVobpxu1l+xCFYXjGC0YmHwrJVNrUvzmjNwCQtIXqdiWU+QsSEaIs5HqbTmRrlitTFp1G6lgvuf03OpXqaIm5OkuTmq+hbGzrfirFGmLOaPyRUqwk6X8TfgecCHnkFd3b3PP6eFr14Ga45WUQRme7fGKP5WEwknsirzQ3cbieYEJOA083o3tSeIpqXy70+9Apu5ANz5X+gJGJr3duws41LbJBj46GasLZNJEPDu5d77vi+FxgX6sUnRPK8DCMDyskn4qpY+UIquU9/3NG0R84DTYOXOiP477JXsJ1ThW9862yRbBXeg1a9ser+gkqKunbQvkv8FUZmtrundUHlV9dy2tQClKqeKZbZENGSiB1b4ZZkGLA6Y/f5Ki6qMlC3QKvz8BcjpLfdTgxUbq97djVqmPtjVB6vefkWYJ30d/sD4kfPns9GmHcEibV00lwd5G3d/Iur7njW2LL4TPSyw/EeRw2qC5XI/eeJxz70KrPkPAPYDv21LUeZYft2wPO2+U2lVCddYm7XEhT8aBMuz5lkiAw8ruT6QO2+IIJyW+60Wjfh4avjnRvb2J/jxwf8qUBFMQOL9WSTD9iyme+fe3IS/E6eXaqzjw/eYfKxsWn//aPW58Q1e++3kWRdHpM3fkj7zZWsgj4OxFRj1JvQlgO0i15zp9lYof0WOdS+xIzeGb8yavg6Aul3iN4Tv79e2U6PMpBFEGhnrd/Miqqjp/K0vUjd8sEnkwsgZQWygJBNam6z7KLHWpcjqGL3hbtuyQQaLXV5ur02hbEhAEQRDkvyEfmxNWja1UCr1mnrQwE6cxgT6UweekOvOsHh26k1JyLmFLQVFNhFJUSka6hkmfkEdPWK88xc9r8hRICdcIVVKTRPUJEXB8uOsHKTcBqc5b9M+TKodTy6oiXl1zIwUxvMcgVSojJdxhOXHySPnDVl7faDNGMmajVA5S5mLSp25KSnX2SEXDSUEZRY5S94aAlHb1IMXcumcyI3Hmf/gK/BMpeOq0a9aggRmW2ghKYZKLeB7klGsuOyanQHrfzuiP4FLJbjgQoNIU/p9B0AyucRPUgIEMNzKdpLJPU8UySprjT1vFeZ5DtFpTh9iwII6FuQaLLSEIXNDwOX1ArqdEp0Rc69AHgiAIgiAIgiAIgiA/4Q+++zJ+Su4ELAAAAABJRU5ErkJggg==" alt="Project 1">
+                <h3>Many more in making!</h3>
+                <p>will be available soon!!!!!</p>
+                <a href="" class="btn" target="_blank" rel="noopener noreferrer">Please wait for a little while</a>
+            </div>
+        </div>
+    </section>
+    
+
+    
+                
+    
+   
+    
+
+    <footer>
+        <p>Contact me:</p>
+        <a href="mailto:mousinisarkar05@gmail.com" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail" class="gmail-icon">
+        </a>
+        <p>&copy; 2024 Mousini Sarkar. All rights reserved.</p>
+    </footer>
+    
+    
+    
+</body>
+
+</html>
